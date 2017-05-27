@@ -1,0 +1,46 @@
+By default, Apache Maven 3.0.5  has been install in your ubuntu 
+
+Maven Install Ubuntu 14.x, 15.x 
+
+$ sudo  apt-get install maven
+
+Check the version,
+
+$  mvn --version
+
+Apache Maven 3.0.5
+Maven home: /usr/share/maven
+Java version: 1.8.0_25, vendor: Oracle Corporation
+Java home: /usr/java/jdk1.8.0_25/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.13.0-57-generic", arch: "amd64", family: "unix"
+
+If you want to install 3.3.x version just follow steps, 
+
+Download the apache-Maven package from https://maven.apache.org/download.cgi
+
+Download the file using wget command,
+    
+$ sudo wget http://mirror.fibergrid.in/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+
+Extract the tar.gz file format,
+
+$ sudo tar -zxvf apache-maven-3.3.9-bin.tar.gz
+
+then move that directory to the specific location
+
+$  sudo mv apache-maven-3.3.9 /usr/local/.
+
+Set the path Edit a file  ~/.profile or /etc/profile  and add these four lines:
+
+export M2_HOME=/usr/local/apache-maven-3.3.9
+
+export M2=$M2_HOME/bin
+
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+
+export PATH=$M2:$PATH
+
+$ sudo  source ~/.profile
+ 
+$ sudo source /etc/profile
